@@ -1,0 +1,7 @@
+{
+  // You need to specify the name of the package for patching.
+  "name": "@std/streams",
+  "exports": {
+    "./buffer": "./1.0.7/buffer.ts"
+  }
+}

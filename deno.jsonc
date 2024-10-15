@@ -1,6 +1,11 @@
 {
+  // Downloading remote modules due to patching via vendor.
+  // "vendor": true,
   "imports": {
     "@std/assert": "jsr:@std/assert@1.0.6",
     "@std/streams": "jsr:@std/streams@1.0.7"
-  }
+  },
+  "patch": [
+    "./patch/streams"
+  ]
 }
