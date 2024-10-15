@@ -59,6 +59,13 @@ assert(buf.length > 0);
 
 ## Reproduce patching
 
+```bash
+% deno --version
+deno 2.0.0 (stable, release, aarch64-apple-darwin)
+v8 12.9.202.13-rusty
+typescript 5.6.2
+```
+
 1. First, download the file you want to patch.  
   Set the `vendor` option to be `true` in `deno.json` is quick.
 
