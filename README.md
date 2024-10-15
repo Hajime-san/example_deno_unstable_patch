@@ -56,3 +56,16 @@ await inputStream.pipeThrough(new TextEncoderStream()).pipeTo(buf.writable);
 assert(buf.capacity > 0);
 assert(buf.length > 0);
 ```
+
+## Reproduce patching
+
+1. First, download the file you want to patch.  
+  Set the `vendor` option to be `true` in `deno.json` is quick.
+
+2. Add `patch/streams/deno.jsonc`.  
+  And replace the modulespecifier from `jsr:@std/bytes@^1.0.2/copy` to `jsr:@std/bytes@1.0.0/copy` in `patch/streams/1.0.7/buffer.ts`.
+
+3. Run `deno run streams.ts`.  
+  Finally, the `deno.lock` shows your sub dependency was replaced.
+
+https://github.com/Hajime-san/example_deno_unstable_patch/blob/1c05056c1f2e425f849681bd424bdd4d5b9301f5/deno.lock#L5
